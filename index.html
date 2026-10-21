@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            PID simulation
+        </title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+        <link href="https://cdnfonts.com" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="pid_controller.js"></script>
+        <script src="app.js"></script>
+        <script src="trend.js"></script>
+
+    </head>
+    <body>
+        <div class="container-fluid" id="main-container">
+            <h1>PID simulation</h1>
+            <div class="row">
+                <div class="col">
+                    <div class="container">
+                        <div class="process-visualization">
+                            <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="656.10345"
+    height="520"
+    viewBox="0 -200 656.10345 520"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="img_s.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask6">
+      <g
+         fill="#D35F5F"
+         id="g6"
+         style="fill:#a8ff00;fill-opacity:0.769585">
+        <ellipse
+           cx="100"
+           cy="200"
+           rx="100"
+           ry="50"
+           id="ellipse6"
+           style="fill:#a8ff00;fill-opacity:0.769585" />
+      </g>
+    </mask>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath7">
+      <ellipse
+         cx="100"
+         cy="12.915131"
+         rx="100"
+         ry="50"
+         id="ellipse7"
+         style="fill:#498cc7;fill-opacity:1" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath7-6">
+      <ellipse
+         cx="100"
+         cy="12.915131"
+         rx="100"
+         ry="50"
+         id="ellipse7-1"
+         style="fill:#498cc7;fill-opacity:1" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="30.66015"
+     inkscape:cx="567.2999"
+     inkscape:cy="208.43016"
+     inkscape:window-width="1920"
+     inkscape:window-height="1094"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g23" />
+  <g
+     id="tank-bottom">
+    <ellipse
+       cx="291.87943"
+       cy="261.67026"
+       rx="100"
+       ry="50"
+       id="tank-bottom-bottom"
+       style="fill:#9d009d;fill-opacity:1" />
+    <rect
+       x="191.87944"
+       y="111.67027"
+       width="200"
+       height="156.64206"
+       id="tank-bottom-fill"
+       style="fill:#9d009d;fill-opacity:1;stroke-width:0.668991"
+       mask="none" />
+    <ellipse
+       cx="291.87943"
+       cy="111.67028"
+       rx="99.999992"
+       ry="50"
+       id="tank-bottom-cap"
+       style="fill:#9d009d;fill-opacity:1" />
+  </g>
+  <g
+     id="tank-top">
+    <rect
+       x="4.7683716e-07"
+       y="12.915129"
+       width="200"
+       height="156.64206"
+       id="tank-top-cap"
+       style="fill:#51aea2;fill-opacity:0.619816;stroke:none;stroke-width:0.668991;stroke-opacity:1"
+       mask="none"
+       clip-path="url(#clipPath7-6)"
+       transform="matrix(0.99999991,0,0,-1,191.87944,-25.414597)" />
+    <rect
+       x="4.7683716e-07"
+       y="12.915129"
+       width="200"
+       height="156.64206"
+       id="tank-top-bottom"
+       style="fill:#51aea2;fill-opacity:0.619816;stroke-width:0.668991"
+       mask="none"
+       clip-path="url(#clipPath7)"
+       transform="translate(191.87944,98.75514)" />
+    <rect
+       style="fill:#51aea2;fill-opacity:0.619816;stroke:none;stroke-width:1.73205"
+       id="tank-top-fill"
+       width="200"
+       height="150"
+       x="191.87944"
+       y="-38.329731" />
+  </g>
+  <g
+     id="g13"
+     transform="translate(-25.570651,-388.32973)">
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#092524;stroke-width:3.77953;stroke-dasharray:none;stroke-opacity:1"
+       d="M 156.23009,331.88977 H 313.76952"
+       id="path8"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#092524;stroke-width:3.77953;stroke-dasharray:none;stroke-opacity:1"
+       d="m 94.481338,316.7447 v 30 l 60.000002,-30 v 30 z"
+       id="path10"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#092524;stroke-width:3.77953;stroke-dasharray:none;stroke-opacity:1"
+       d="M 124.59169,331.34093 V 294.02865"
+       id="path11" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#092524;stroke-width:3.77953;stroke-dasharray:none;stroke-opacity:1"
+       id="path12"
+       sodipodi:type="arc"
+       sodipodi:cx="124.7874"
+       sodipodi:cy="284.43964"
+       sodipodi:rx="11.024082"
+       sodipodi:ry="11.024082"
+       sodipodi:start="0"
+       sodipodi:end="3.1415927"
+       sodipodi:arc-type="arc"
+       d="m 135.81148,284.43964 a 11.024082,11.024082 0 0 1 -5.51204,9.54713 11.024082,11.024082 0 0 1 -11.02408,0 11.024082,11.024082 0 0 1 -5.51204,-9.54713"
+       sodipodi:open="true" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#092524;stroke-width:3.77953;stroke-dasharray:none;stroke-opacity:1"
+       d="M 94.650548,331.88977 H 25.570651"
+       id="path13" />
+  </g>
+  <g
+     id="g23"
+     transform="translate(-158.12056,-388.32973)">
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#092524;stroke-width:3.77953;stroke-dasharray:none;stroke-opacity:1"
+       d="m 756.65948,647.45013 h 57.56455"
+       id="path8-4"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#092524;stroke-width:3.77953;stroke-dasharray:none;stroke-opacity:1"
+       d="m 694.91073,632.30506 v 30 l 60,-30 v 30 z"
+       id="path10-3"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#092524;stroke-width:3.77953;stroke-dasharray:none;stroke-opacity:1"
+       d="M 724.91073,646.90129 V 609.58901"
+       id="path11-1" />
+    <circle
+       style="fill:none;fill-opacity:1;stroke:#092524;stroke-width:3.77953;stroke-dasharray:none;stroke-opacity:1"
+       id="path12-2"
+       cx="724.91071"
+       cy="600"
+       r="11.024082" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#092524;stroke-width:3.77953;stroke-dasharray:none;stroke-opacity:1"
+       d="M 695.0947,647.45033 H 550.00004"
+       id="path13-3"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#092524;stroke-width:3.77953;stroke-dasharray:none;stroke-opacity:1"
+       d="M 724.91073,588.35206 V 510.20502"
+       id="path14"
+       sodipodi:nodetypes="cc" />
+    <g
+       id="g15"
+       transform="translate(26.675378,43.486534)">
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#092524;stroke-width:3.77953;stroke-dasharray:none;stroke-opacity:1"
+         id="path15"
+         cx="698.23535"
+         cy="445.10425"
+         r="20.35215" />
+      <text
+         xml:space="preserve"
+         style="writing-mode:lr-tb;direction:ltr;fill:#092524;fill-opacity:1;stroke:#092524;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+         x="687.80566"
+         y="450.92065"
+         id="text15"><tspan
+           sodipodi:role="line"
+           id="tspan15"
+           x="687.80566"
+           y="450.92065"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#092524;fill-opacity:1">LC</tspan></text>
+    </g>
+    <g
+       id="g22"
+       transform="translate(8.9435898,99.34887)">
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#092524;stroke-width:3.77953;stroke-dasharray:none;stroke-opacity:1"
+         id="path15-1"
+         cx="633.24194"
+         cy="389.24191"
+         r="20.35215" />
+      <text
+         xml:space="preserve"
+         style="writing-mode:lr-tb;direction:ltr;fill:#092524;fill-opacity:1;stroke:#092524;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+         x="623.74194"
+         y="395.05832"
+         id="text15-1"><tspan
+           sodipodi:role="line"
+           id="tspan15-3"
+           x="623.74194"
+           y="395.05832"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#092524;fill-opacity:1">LT</tspan></text>
+    </g>
+    <path
+       style="fill:#092524;fill-opacity:1;stroke:#092524;stroke-width:3.78;stroke-dasharray:none;stroke-opacity:1"
+       d="M 620.66421,488.59078 H 546.86347"
+       id="path22" />
+    <path
+       style="fill:#092524;fill-opacity:1;stroke:#092524;stroke-width:3.78;stroke-dasharray:none;stroke-opacity:1"
+       d="m 661.99262,488.59078 h 42.80443"
+       id="path23" />
+  </g>
+</svg>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                        <div class="container" >
+                            <div class="regelaar">
+                        <div class="d-inline-flex">
+                            <div class=""p-2">
+                            
+                            <div class="d-flex flex-row mb-3">
+                                <div class="p-2">
+                                    <span class="label">MV</span><br>
+                                    <div class="progress progress-bar-vertical" id="progress-bar-mv">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 30%;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-2">
+                                    <span class="label">SP</span><br>
+                                    <input type="range" id="input-sp" name="sp" list="values" start="0" end="100" step="0.1">
+                                    <datalist id="values">
+                                        <option value="100"></option>
+                                        <option value="80"></option>
+                                        <option value="60"></option>
+                                        <option value="40"></option>
+                                        <option value="20"></option>
+                                        <option value="0"></option>
+                                    </datalist>
+                                </div>
+                                <div class="p-2">
+                                    <span class="label">OUT</span><br>
+                                    <div class="progress progress-bar-vertical" id="progress-bar-out">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 30%;">
+                                    </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            <div class="d-flex flex-row justify-content-center">
+                                <div class="p-2">
+                                    <div class="led-display" id="display-mv">
+                                        <div class="display-content d-flex align-items-center justify-content-between">
+                                            <div class="content">
+                                                <div class="label d-flex justify-content-between"><span>MV</span><span>%</span></div>
+                                                <div class="numbers"><span class="real-number">53</span><span class="decimal">8</span></div>
+                                            </div>
+                                            <div class="buttons d-none flex-column text-center ms-2">
+                                                <div class="btn-group-vertical btn-group-sm" role="group" aria-label="MV controls">
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="mv" data-delta="1">+1</button>
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="mv" data-delta="-1">-1</button>
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="mv" data-delta="10">+10</button>
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="mv" data-delta="-10">-10</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-2">
+                                    <div class="led-display" id="display-sp">
+                                        <div class="display-content d-flex align-items-center justify-content-between">
+                                            <div class="content">
+                                                <div class="label d-flex justify-content-between">
+                                                    <span>SP</span>
+                                                    <span>%</span>
+                                                </div>
+                                                <div class="numbers">
+                                                    <span class="real-number">53</span><span class="decimal">8</span>
+                                                </div>
+                                            </div>
+                                            <div class="buttons d-none flex-column text-center ms-2">
+                                                <div class="btn-group-vertical btn-group-sm" role="group" aria-label="SP controls">
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="sp" data-delta="1">+1</button>
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="sp" data-delta="-1">-1</button>
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="sp" data-delta="10">+10</button>
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="sp" data-delta="-10">-10</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                <div class="p-2">
+                                    <div class="led-display" id="display-out">
+                                        <div class="display-content d-flex align-items-center justify-content-between">
+                                            <div class="content">
+                                                <div class="label d-flex justify-content-between"><span>OUT</span><span>%</span></div>
+                                                <div class="numbers"><span class="real-number">53</span><span class="decimal">8</span></div>
+                                            </div>
+                                            <div class="buttons d-none flex-column text-center ms-2">
+                                                <div class="btn-group-vertical btn-group-sm" role="group" aria-label="OUT controls">
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="out" data-delta="1">+1</button>
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="out" data-delta="-1">-1</button>
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="out" data-delta="10">+10</button>
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="out" data-delta="-10">-10</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="d-inline-flex parameters">
+                            <div class="p-2 align-self-end">
+                                    <br>
+                                    <div class="led-display" id="display-kp">
+                                        <div class="display-content d-flex align-items-center justify-content-between">
+                                            <!-- Left Sub-Block: Label & Numbers -->
+                                            <div class="content">
+                                                <div class="label d-flex justify-content-between">
+                                                    <span>K<sub>p</sub></span>
+                                                    <span></span>
+                                                </div>
+                                                <div class="numbers">
+                                                    <span class="real-number">01</span><span class="decimal">8</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- Right Sub-Block: Controls inside the display -->
+                                            <div class="buttons d-none flex-column text-center ms-2">
+                                                <div class="btn-group-vertical btn-group-sm" role="group" aria-label="KP controls">
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="kp" data-delta="0.1">+0.1</button>
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="kp" data-delta="-0.1">-0.1</button>
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="kp" data-delta="1">+1</button>
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="kp" data-delta="-1">-1</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br><br>
+                                    <div class="led-display" id="display-ti">
+                                        <div class="display-content d-flex align-items-center justify-content-between">
+                                            <div class="content">
+                                                <div class="label d-flex justify-content-between">
+                                                    <span>T<sub>i</sub></span>
+                                                    <span>s</span>
+                                                </div>
+                                                <div class="numbers"><span class="real-number">001</span><span class="decimal">0</span></div>
+                                            </div>
+                                            <div class="buttons d-none flex-column text-center ms-2">
+                                                <div class="btn-group-vertical btn-group-sm" role="group" aria-label="Ti controls">
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="ti" data-delta="0.1">+0.1</button>
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="ti" data-delta="-0.1">-0.1</button>
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="ti" data-delta="1">+1</button>
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="ti" data-delta="-1">-1</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br><br>
+                                    <div class="led-display" id="display-td">
+                                        <div class="display-content d-flex align-items-center justify-content-between">
+                                            <div class="content">
+                                                <div class="label d-flex justify-content-between">
+                                                    <span>T<sub>d</sub></span>
+                                                    <span>s</span>
+                                                </div>
+                                                <div class="numbers"><span class="real-number">001</span><span class="decimal">0</span></div>
+                                            </div>
+                                            <div class="buttons d-none flex-column text-center ms-2">
+                                                <div class="btn-group-vertical btn-group-sm" role="group" aria-label="Td controls">
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="td" data-delta="0.1">+0.1</button>
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="td" data-delta="-0.1">-0.1</button>
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="td" data-delta="1">+1</button>
+                                                    <button type="button" class="btn text-reset shadow-none btn-outline-light btn-adjust" data-param="td" data-delta="-1">-1</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br><br>
+                                    <div class="button">
+                                        <button type="button" class="btn btn-primary btn-lg" id="button-am" aria-pressed="false" title="Toggle automatic/manual control">A/M</button>
+                                    </div>
+                                    <br>
+                                    <div class="button">
+                                        <button type="button" class="btn btn-primary btn-lg">Test</button>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <div class="trend-toolbar">
+                        <div class="btn-group trend-toolbar-actions" role="group" aria-label="Trend controls">
+                            <button type="button" class="btn btn-outline-secondary" id="trend-options-toggle" aria-label="Trend options" aria-expanded="false" aria-controls="trend-options" title="Trend options">
+                                <i class="bi bi-gear-fill" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary" id="trend-freeze" aria-label="Freeze trend" aria-pressed="false" title="Freeze trend">
+                                <i class="bi bi-pause-fill" aria-hidden="true"></i>
+                                <span class="visually-hidden">Freeze trend</span>
+                            </button>
+                        </div>
+                        <div class="trend-options" id="trend-options" hidden>
+                            <label class="trend-interval-field" for="trend-interval">
+                                <span>Interval (ms)</span>
+                                <input type="number" id="trend-interval" min="10" max="1000" step="10" value="50">
+                            </label>
+                            <fieldset class="trend-plot-toggles">
+                                <legend>Traces</legend>
+                                <label><input type="checkbox" id="trend-show-mv" checked> MV</label>
+                                <label><input type="checkbox" id="trend-show-sp" checked> SP</label>
+                                <label><input type="checkbox" id="trend-show-out" checked> OUT</label>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <canvas id="trend" width="1050" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </body>
+</html>
